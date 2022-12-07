@@ -1,0 +1,784 @@
+@charset "utf-8";
+/* 기본 CSS */
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+}
+/* 지정 너비 적용 클래스 */
+.container {
+    max-width: 1132px;
+    margin: 0 auto;
+}
+/* 각 박스 타이틀 클래스 */
+.sec_title {
+    font-size: 4.2rem;
+    color: #803BD5;
+}
+/* 구분선 스타일 */
+.divider {
+    max-width: 1132px;
+    margin: 0 auto;
+    height: 2px;
+    background: #eee;
+    margin-top: 80px;
+}
+/* 짧은 구분선 스타일 */
+.m_divider {
+    width: 20px;
+    margin: 0 auto;
+    height: 2px;
+    background: #803BD5;
+    margin-top: 80px;
+}
+
+/* 모바일 퍼스트 */
+/* 공통 CSS */
+/* 1. Header */
+.header {
+    padding: 18px 16px;
+    /* 위치기준값 */
+    position: relative;
+}
+.header .logo {
+    /* 플롯 */
+    float: left;
+}
+.header .logo a {
+    /* font-size: 2.6rem; */
+    color: #803BD5;
+    /* letter-spacing: -2px; */
+    font-weight: 500;
+}
+.header .logo img{
+    width: 160px;
+    height: 25px;
+}
+/* GNB */
+.header .gnb {
+    width: 100%;
+    background: #803BD5;
+    /* 포지션 */
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 9999999;
+    /* margin-top: 5px; */
+
+    /* 로딩시 가려지도록 */
+    display: none;
+}
+.header .gnb li {
+    border-bottom: 1px solid #000;
+}
+.header .gnb li a {
+    display: block;
+    font-size: 1.4rem;
+    padding: 14px 0 14px 5%;
+}
+/* Hamberger Toggle */
+.header .menu_toggle_btn {
+    width: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+    /* 플롯 */
+    float: right;
+}
+.header .menu_toggle_btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #803BD5;
+}
+.header .menu_toggle_btn span:nth-child(2) {
+    margin: 5px 0;
+}
+/* 2. 모바일 Slider */
+.slider .slider_img {
+    max-width: 100%;
+    width: 100%;
+}
+.slider .slider_img img {
+    width: 100%;
+}
+
+/* 3.Contents */
+/* 3-1. 모바일 Display */
+.display_section {
+    margin-top: 60px;
+    text-align: center;
+}
+.display_section .sec_title {
+    margin-bottom: 32px;
+}
+.display_section .sec_title img{
+    width: 150px;
+}
+.display_section .desc {
+    color: #616161;
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+/* 3-2. 모바일 promotion */
+.promotion_section {
+    margin-top: 68px;
+}
+.promotion_section .promotion_list {}
+.promotion_section .promotion_list li {
+    margin-top: 48px;
+    text-align: center;
+}
+.promotion_section .promotion_list li:nth-child(1) {
+    /* margin-top: 0; */
+}
+.promotion_section .promotion_list li img {
+    height: 52px;
+}
+.promotion_section .promotion_list li h3 {
+    margin: 30px 0 20px;
+    color: #803BD5;
+    
+}
+.promotion_section .promotion_list li p {
+    font-size: 1rem;
+    /* font-family: 'Noto sans KR', sans-serif; */
+    line-height: 1.5;
+}
+
+/* 3-3. 모바일 portfolio */
+.work_section {
+    margin-top: 74px;
+}
+.work_section .sec_title {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 48px;
+}
+.work_section .work_list li {
+    width: 100%;
+}
+.work_section .work_list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.work_section .work_list li a img {
+    max-width: 100%;
+    width: 100%;
+}
+
+
+/* 이미지 정보 효과 */
+.work_section .work_list li a {
+    /* 위치기준값 */
+    position: relative;
+}
+/* 셀로판지 효과 */
+.work_section .work_list li a:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* 포지션 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: #803BD5;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.work_section .work_list li a:hover:before {
+    opacity: 0.7;
+}
+/* 텍스트 CSS */
+.work_section .work_list li div>h3 {
+    font-size: 2.4rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.work_section .work_list li div>span {
+    font-size: 1.1rem;
+    color: #fff;
+}
+/* 텍스트 이동 효과 */
+.work_section .work_list li div {
+    /* 포지션 */
+    position: absolute;
+    left: 30px;
+    top: 0;
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.work_section .work_list li a:hover div {
+    opacity: 1;
+    transform: translateY(30px);
+}
+
+/* 3-4. 모바일 blog */
+.blog_section {
+    margin-top: 80px;
+}
+.blog_section .sec_title {
+    margin-bottom: 48px;
+    text-align: center;
+}
+.blog_section .blog_list li {
+    width: 100%;
+    margin-top: 48px;
+    overflow: hidden;
+}
+.blog_section .blog_list li:nth-child(1) {
+    margin-top: 0;
+}
+.blog_section .blog_list li img {
+    max-width: 100%;
+    width: 90%;
+    margin:10px 20px;
+}
+.blog_list img{
+    width: 100%;
+    transition: all 2s;
+}
+.blog_list img:hover{
+    transform: scale(1.1);
+}
+.blog_section .blog_list li time {
+    display: block;
+    font-size: 1.2rem;
+    color: #9e9e9e;
+    margin: 10px 0;
+    margin: 10px 20px;
+    margin-top: 40px;
+}
+.blog_section .blog_list li h3 {
+    font-size: 1.6rem;
+    color: #424242;
+    line-height: 1.6;
+    margin:10px 20px;
+}
+
+/* 3-5. 모바일 contact */
+.contact_section {
+    margin-top: 100px;
+}
+.contact_section .sec_title {
+    margin-bottom: 48px;
+    text-align: center;
+}
+input,textarea {
+    border-bottom: 1px solid #757575;
+    font-size: 1.2rem;
+    font-family: 'Montserrat',sans-serif;
+    color: #803BD5;
+}
+/* input Form */
+.form input {
+    padding-bottom: 14px;
+    margin-bottom: 40px;
+}
+/* textarea Form */
+.txta textarea {
+    height: 170px;
+}
+.form,.txta{
+    padding: 0 20px;
+}
+/* Button */
+.send_btn {
+    margin-top: 36px;
+    text-align: right;
+}
+.send_btn button {
+    font-size: 1.2rem;
+    color: #fff;
+    background: #803BD5;
+    padding: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* 4.Footer */
+.footer {
+    margin-top: 100px;
+}
+.footer iframe {
+    width: 100%;
+    height: 320px;
+}
+.footer p {
+    margin: 20px 0;
+    color: darkgray;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+/* 태블릿 미디어쿼리 768px 이상 */
+@media screen and (min-width:768px){
+    /* 1. 태블릿 Header */
+    .header {
+        padding: 18px 16px;
+        /* 위치기준값 */
+        position: relative;
+    }
+    .header .logo {
+        /* 플롯 */
+        float: left;
+    }
+    .header .logo a {
+        font-size: 2.6rem;
+        color: #803BD5;
+        letter-spacing: -2px;
+        font-weight: 500;
+    }
+    /* GNB */
+    .header .gnb {
+        /* 모바일 속성값 초기화 */
+        width: auto;
+        background: none;
+        /* 포지션 */
+        position: static;
+        /* GNB 메뉴 보이도록 */
+        display: block !important;
+        /* 플롯 */
+        float: right;
+    }
+    .header .gnb li {
+        border-bottom: 0;
+        /* 플롯 */
+        float: left;
+        margin-left: 20px;
+    }
+    .header .gnb li a {
+        display: block;
+        font-size: 1.4rem;
+        padding: 0;
+        padding-top: 5px;
+    }
+    /* 태블릿 Hamberger Toggle */
+    .header .menu_toggle_btn {
+        width: 20px;
+        margin-top: 4px;
+        cursor: pointer;
+        /* 플롯 */
+        float: right;
+
+        display: none;
+    }
+    .header .menu_toggle_btn span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #303f9f;
+    }
+    .header .menu_toggle_btn span:nth-child(2) {
+        margin: 5px 0;
+    }
+
+    /* 3-1. 태블릿 Display */
+    .display_section {
+        margin-top: 100px;
+        text-align: center;
+    }
+    .display_section .sec_title {
+        margin-bottom: 32px;
+    }
+    .display_section .desc {
+        color: #616161;
+        font-size: 1.4rem;
+        line-height: 2;
+    }
+
+    /* 3-2. 태블릿 promotion */
+    .promotion_section {
+        margin-top: 110px;
+    }
+    .promotion_section .promotion_list li {
+        margin-top: 0;
+        text-align: center;
+        /* (768px) */
+        width: 177px;
+        /* (177/768)*100 = 23.046875 */
+        width: 23.046875%;
+        margin-left: 20px;
+        /* (20/768)*100 = 2.604166666666667 */
+        margin-left: 2.604166666666667%;
+        /* 플롯 */
+        float: left;
+    }
+    .promotion_section .promotion_list li:nth-child(1) {
+        margin-left: 0;
+    }
+    .promotion_section .promotion_list li img {
+        height: 52px;
+    }
+    .promotion_section .promotion_list li h3 {
+        margin: 30px 0 20px;
+        color: #803BD5;
+        font-size: 1.6rem;
+    }
+    .promotion_section .promotion_list li p {
+        color: #616161;
+        line-height: 1.5;
+    }
+
+    /* 3-3. 태블릿 portfolio */
+    .work_section {
+        margin-top: 100px;
+    }
+    .work_section .sec_title {
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    .work_section .work_list li {
+        width: 50%;
+        /* 플롯 */
+        float: left;
+    }
+    .work_section .work_list li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .work_section .work_list li a img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* 3-4. 태블릿 blog */
+    .blog_section {
+        margin-top: 124px;
+    }
+    .blog_section .sec_title {
+        margin-bottom: 48px;
+        text-align: center;
+    }
+    .blog_section .blog_list li {
+        margin-top: 0;
+        /* (768px) */
+        width: 242.6666666666667px;
+        width: 31.597222222222225%;
+        margin-left: 20px;
+        margin-left: 2.604166666666667%;
+        /* 플롯 */
+        float: left;
+    }
+    .blog_section .blog_list li:nth-child(1) {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .blog_section .blog_list li img {
+        max-width: 100%;
+        width: 100%;
+    }
+    .blog_section .blog_list li time {
+        display: block;
+        font-size: 1.2rem;
+        color: #9e9e9e;
+        margin: 10px 20px;
+        margin-top: 20px;
+    }
+    .blog_section .blog_list li h3 {
+        font-size: 1.6rem;
+        color: #424242;
+        line-height: 1.6;
+    }
+
+    /* 3-5. 태블릿 contact */
+    .contact_section {
+        margin-top: 180px;
+    }
+    .contact_section .sec_title {
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    input,textarea {
+        border-bottom: 1px solid #757575;
+        font-size: 1.2rem;
+        font-family: 'Montserrat',sans-serif;
+        color: #803BD5;
+    }
+    /* input Form */
+    .form {
+        width: 374px;
+        /* (768px) */
+        width: 48.69791666666667%;
+        margin-right: 20px;
+        margin-right: 2.604166666666667%;
+        /* 플롯 */
+        float: left;
+    }
+    .txta {
+        width: 374px;
+        width: 48.69791666666667%;
+        /* 플롯 */
+        float: right;
+    }
+    .form input {
+        padding-bottom: 14px;
+        margin-bottom: 40px;
+    }
+    /* textarea Form */
+    .txta textarea {
+        height: 190px;
+    }
+    /* Button */
+    .send_btn {
+        margin-top: 36px;
+        text-align: right;
+    }
+    .send_btn button {
+        font-size: 1.2rem;
+        color: #fff;
+        padding: 15px;
+        cursor: pointer;
+    }
+    /* 4. 태블릿 Footer */
+    .footer {
+        margin-top: 100px;
+    }
+    .footer iframe {
+        width: 100%;
+        height: 320px;
+    }
+    .footer p {
+        margin: 20px 0;
+        color: darkgray;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+}
+
+/* PC 미디어쿼리 1132px 이상 */
+@media screen and (min-width:1132px){
+    /* 3-1. PC Display */
+    .display_section {
+        margin-top: 100px;
+        text-align: left;
+    }
+    .display_section .sec_title {
+        margin-bottom: 0;
+        /* 플롯 */
+        float: left;
+    }
+    .display_section .desc {
+        color: #616161;
+        font-size: 1.4rem;
+        line-height: 2;
+        /* 플롯 */
+        float: right;
+        /* 위치기준 */
+        position: relative;
+        padding-left: 20px;
+    }
+    .header .logo {
+        /* 플롯 */
+        float: left;
+    }
+    .header .logo a {
+        font-size: 2.6rem;
+        color: #803BD5;
+        letter-spacing: -2px;
+        font-weight: 500;
+    }
+    /* 데코 세로막대 */
+    .display_section .desc:before {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 44px;
+        background: #e0e0e0;
+        /* 포지션 */
+        position: absolute;
+        left: 0;
+        top: 8px;
+        z-index: 1;
+    }
+
+    /* 3-2. PC promotion */
+    .promotion_section {
+        margin-top: 110px;
+    }
+    .promotion_section .promotion_list li {
+        margin-top: 0;
+        text-align: center;
+        /* (1132px) */
+        width: 268px;
+        width: 23.674911660777383%;
+        margin-left: 20px;
+        margin-left: 1.76678445229682%;
+        /* 플롯 */
+        float: left;
+    }
+    .promotion_section .promotion_list li:nth-child(1) {
+        margin-left: 0;
+    }
+    .promotion_section .promotion_list li img {
+        height: 52px;
+    }
+    .promotion_section .promotion_list li h3 {
+        margin: 30px 0 20px;
+        color: #803BD5;
+        font-size: 1.6rem;
+    }
+    .promotion_section .promotion_list li p {
+        color: #616161;
+        line-height: 1.5;
+    }
+
+    /* 3-3. PC portfolio */
+    .work_section {
+        margin-top: 100px;
+    }
+    .work_section .sec_title {
+        margin: 0 auto;
+        text-align: left;
+        margin-bottom: 80px;
+    }
+    .work_section .work_list li {
+        width: 25%;
+        /* 플롯 */
+        float: left;
+    }
+    .work_section .work_list li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .work_section .work_list li a img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* 3-4. PC blog */
+    .blog_section {
+        margin-top: 124px;
+    }
+    .blog_section .sec_title {
+        /* margin-bottom: 48px; */
+        text-align: center;
+        /* (288px) */
+        /* 플롯 */
+        float: left;
+    }
+    .blog_section .sec_title h2{
+        margin-bottom: -48px;
+    }
+    .blog_section .blog_list {
+        width: 844px;
+        /* (844/1132)*100 = 74.55830388692578 */
+        width: 74.55830388692578%;
+        /* 플롯 */
+        float:left;
+    }
+    .blog_section .blog_list li {
+        margin-top: 0;
+        /* (844px) */
+        width: 268px;
+        width: 31.753554502369667%;
+        margin-left: 20px;
+        margin-left: 2.3696682464454977%;
+        /* 플롯 */
+        float: left;
+    }
+    .blog_section .blog_list li:nth-child(1) {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .blog_section .blog_list li img {
+        max-width: 100%;
+        width: 100%;
+    }
+    .blog_section .blog_list li time {
+        display: block;
+        font-size: 1.2rem;
+        color: #9e9e9e;
+        margin: 10px 20px;
+        margin-top: 20px;
+    }
+    .blog_section .blog_list li h3 {
+        font-size: 1.6rem;
+        color: #424242;
+        line-height: 1.6;
+        margin: 0;
+        margin: 10px 20px;
+    }
+
+    /* 3-5. PC contact */
+    .contact_section {
+        margin-top: 180px;
+    }
+    .contact_section .sec_title {
+        margin-bottom: 0;
+        /* text-align: center; */
+        /* 플롯 */
+        float: left;
+    }
+    input,textarea {
+        border-bottom: 1px solid #757575;
+        font-size: 1.2rem;
+        font-family: 'Montserrat',sans-serif;
+        color: #803BD5;
+    }
+    /* input Form */
+    .form_box {
+        width: 844px;
+        /* 플롯 */
+        float: right;
+    }
+    .form {
+        /* (844px) */
+        width: 412px;
+        width: 48.81516587677725%;
+        margin-right: 20px;
+        margin-right: 2.3696682464454977%;
+        /* 플롯 */
+        float: left;
+    }
+    .txta {
+        width: 412px;
+        width: 48.81516587677725%;
+        /* 플롯 */
+        float: right;
+    }
+    .form input {
+        padding-bottom: 14px;
+        margin-bottom: 40px;
+    }
+    /* textarea Form */
+    .txta textarea {
+        height: 190px;
+    }
+    /* Button */
+    .send_btn {
+        margin-top: 36px;
+        text-align: right;
+    }
+    .send_btn button {
+        font-size: 1.2rem;
+        color: #fff;
+        padding: 15px;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
